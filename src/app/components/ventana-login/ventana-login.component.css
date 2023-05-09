@@ -1,0 +1,6 @@
+.ventana-login {
+  z-index: 10 !important;
+}
+.fondo-modal {
+  background-color: var(--fondo-modal);
+}

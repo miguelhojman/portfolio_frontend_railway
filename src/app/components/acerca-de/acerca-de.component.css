@@ -1,0 +1,33 @@
+/*SECCION ACERCA DE*/
+.acerca-de {
+  background-color: var(--color-fondo) !important;
+  border-bottom: 3px solid black;
+  border-top: 3px solid black;
+}
+
+.acerca-de img {
+  border: 6px solid black;
+  border-radius: 50%;
+  width: 12rem !important;
+  height: auto;
+}
+.texto-acerca-de {
+  font-size: 1.3rem;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.texto-acerca-de span {
+  font-size: 1.6rem;
+  font-weight: 600;
+  font-style: italic;
+}
+.fondo-modal {
+  background-color: var(--fondo-modal);
+}
+/*@media*/
+@media screen and (width>768px) {
+  .acerca-de img {
+    width: 16rem;
+    height: 16rem;
+    margin: auto 0;
+  }
+}

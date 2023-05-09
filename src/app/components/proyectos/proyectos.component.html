@@ -1,0 +1,235 @@
+<section class="proyectos container-fluid">
+  <div>
+    <h2>PROYECTOS</h2>
+  </div>
+  <div class="row fila-proyectos">
+    <div
+      *ngFor="let item of proyecto"
+      class="card text-bg-success m-3 col-12 col-sm-6 col-md-4"
+      style="width: 18rem"
+    >
+      <div class="card-body">
+        <h5 class="card-title">{{ item.titulo }}</h5>
+        <h5 class="card-title">{{ item.subtitulo }}</h5>
+
+        <p class="card-text">
+          {{ item.descripcion }}
+          <a href="{{ item.enlace }}" target="_blank" rel="noopener noreferrer"
+            >aquí</a
+          >
+        </p>
+      </div>
+    </div>
+    <!----------------Botones edicion---------------------------------------->
+    <div class="crud my-2">
+      <div>
+        <button
+          class="bg-warning botones-cambios"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalCreacion7"
+          *ngIf="isLogged"
+        >
+          <i class="fas fa-plus-square"></i>AGREGAR
+        </button>
+      </div>
+      <div>
+        <button
+          class="bg-warning botones-cambios mx-2"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalEdicion7"
+          *ngIf="isLogged"
+        >
+          <i class="fas fa-edit"></i>EDITAR
+        </button>
+      </div>
+      <div>
+        <button
+          class="bg-warning botones-cambios"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalBorrado7"
+          *ngIf="isLogged"
+        >
+          <i class="fas fa-trash-alt"></i>ELIMINAR
+        </button>
+      </div>
+    </div>
+    <!-------------Modal para editar un proyecto------------------------------------------->
+    <div class="modal" tabindex="-1" id="ModalEdicion7">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content fondo-modal">
+          <div class="modal-header">
+            <h5 class="modal-title">MODIFICA UN PROYECTO DE TU PORTFOLIO</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Título</th>
+                  <th scope="col">Subtítulo</th>
+                  <th scope="col">Descripción</th>
+                  <th scope="col">Enlace</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of proyecto">
+                  <td>{{ item.titulo }}</td>
+                  <td>{{ item.subtitulo }}</td>
+                  <td>{{ item.descripcion }}</td>
+                  <td>{{ item.enlace }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="titulo">TÍTULO</label>
+                <input type="text" id="titulo" [(ngModel)]="nuevoTitulo" />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="subtitulo">SUBTÍTULO</label>
+                <input
+                  type="text"
+                  id="subtitulo"
+                  [(ngModel)]="nuevoSubtitulo"
+                />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="descripcion">DESCRPCIÓN</label>
+                <input
+                  type="text"
+                  id="descripcion"
+                  [(ngModel)]="nuevaDescripcion"
+                />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="enlace">ENLACE</label>
+                <input type="text" id="enlace" [(ngModel)]="nuevoEnlace" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="editar()"
+            >
+              ACTUALIZAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--------------Modal para agregar un proyecto---------------------------------------->
+    <div class="modal" tabindex="-1" id="ModalCreacion7">
+      <div class="modal-dialog">
+        <div class="modal-content fondo-modal">
+          <div class="modal-header">
+            <h5 class="modal-title">AGREGAR NUEVO PROYECTO A TU PORTFOLIO</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="titulo2">TÍTULO</label>
+                <input type="text" id="titulo2" [(ngModel)]="nuevoTitulo" />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="subtitulo2">SUBTÍTULO</label>
+                <input
+                  type="text"
+                  id="subtitulo2"
+                  [(ngModel)]="nuevoSubtitulo"
+                />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="descripcion2">DESCRIPCIÓN</label>
+                <input
+                  type="text"
+                  id="descripcion2"
+                  [(ngModel)]="nuevaDescripcion"
+                />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="enlace2">ENLACE</label>
+                <input type="text" id="enlace2" [(ngModel)]="nuevoEnlace" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="agregar()"
+            >
+              AGREGAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--------------Modal para eliminar un proyecto--------------------------------------->
+    <div class="modal" tabindex="-1" id="ModalBorrado7">
+      <div class="modal-dialog">
+        <div class="modal-content fondo-modal">
+          <div class="modal-header">
+            <h5 class="modal-title">ELIMINAR UN PROYECTO DE TU PORTFOLIO</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="titulo3">TÍTULO</label>
+                <input type="text" id="titulo3" [(ngModel)]="nuevoTitulo" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="eliminar()"
+            >
+              ELIMINAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

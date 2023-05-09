@@ -1,0 +1,18 @@
+<div
+  *ngIf="!errorLogin"
+  class="alert alert-warning alert-dismissible fade show ventana"
+  role="alert"
+>
+  <div class="mensaje">
+    <h3 class="texto">LOS DATOS INGRESADOS...</h3>
+    <h3 class="texto">NO SON CORRECTOS</h3>
+  </div>
+  <button
+    type="button"
+    class="btn-close"
+    data-bs-dismiss="alert"
+    aria-label="Close"
+    (click)="recargar()"
+  ></button>
+</div>
+<!------------------------------------------------------------------------------->

@@ -1,0 +1,25 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+:root {
+  --color-fondo: rgb(238, 124, 124);
+  --fondo-tablas: rgb(227, 110, 110);
+  --fondo-modal: rgb(236, 249, 126);
+}
+body {
+  font-size: 18px;
+  background-color: var(--color-fondo) !important;
+}
+
+.botones-cambios {
+  width: 95px;
+  height: 40px;
+  border: 1px solid black;
+}
+.crud {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

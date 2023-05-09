@@ -1,0 +1,59 @@
+<section class="ventana-login">
+  <!-------- Modal de Bootstrap para el LOGIN------------------------------------------->
+  <div
+    class="modal fade"
+    id="staticBackdrop"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    tabindex="-1"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content fondo-modal">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">
+            INGRESA AQUÍ PARA EDITAR EL PORTFOLIO
+          </h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <label for="inputUsuario" class="form-label">USUARIO</label>
+          <input
+            type="text"
+            id="inputUsuario"
+            class="form-control"
+            [(ngModel)]="usuario1"
+          />
+
+          <label for="inputPassword" class="form-label">CONTRASEÑA</label>
+          <input
+            type="password"
+            id="inputPassword"
+            class="form-control"
+            [(ngModel)]="password1"
+          />
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            CERRAR
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="recibirLogin()"
+            data-bs-dismiss="modal"
+          >
+            INGRESAR
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

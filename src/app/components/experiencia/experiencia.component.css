@@ -1,0 +1,43 @@
+.experiencia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 3px solid black;
+}
+.experiencia h2 {
+  font-size: 2.6rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-bottom: 0 !important;
+  text-decoration: underline;
+  text-align: center;
+}
+.accordion-button {
+  background-color: rgb(192, 136, 244);
+}
+.accordion-item {
+  background-color: #00358e;
+  color: antiquewhite;
+}
+.experiencia p {
+  font-weight: 700;
+}
+.modal {
+  --bs-modal-width: 600px !important;
+}
+
+.titulos {
+  font-size: 1.4rem;
+}
+.body {
+  font-size: 1.1rem;
+}
+.borde {
+  border: 2px solid black;
+}
+.fondo {
+  background-color: var(--fondo-tablas);
+}
+.fondo-modal {
+  background-color: var(--fondo-modal);
+}

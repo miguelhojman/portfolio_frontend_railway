@@ -1,0 +1,200 @@
+<section class="habilidades container-fluid d-flex justify-content-center">
+  <div class="w-50">
+    <h2>HABILIDADES</h2>
+    <div>
+      <div *ngFor="let item of habilidad">
+        <h3>{{ item.nombreHabilidad }}</h3>
+        <div class="meter">
+          <span style.width="{{ item.porcentajeHabilidad }}%"
+            >{{ item.porcentajeHabilidad }} %</span
+          >
+          <br />
+        </div>
+      </div>
+    </div>
+    <!---------------------------------Botones edicion----------------------------------->
+    <div class="crud my-2">
+      <div>
+        <button
+          class="bg-warning botones-cambios"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalCreacion5"
+          *ngIf="isLogged"
+        >
+          <i class="fas fa-plus-square"></i>AGREGAR
+        </button>
+      </div>
+      <div>
+        <button
+          class="bg-warning botones-cambios mx-2"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalEdicion5"
+          *ngIf="isLogged"
+        >
+          <i class="fas fa-edit"></i>EDITAR
+        </button>
+      </div>
+      <div>
+        <button
+          class="bg-warning botones-cambios"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalBorrado5"
+          *ngIf="isLogged"
+        >
+          <i class="fas fa-trash-alt"></i>ELIMINAR
+        </button>
+      </div>
+    </div>
+
+    <!-------------------Modal para agregar una habilidad---------------------------------->
+    <div class="modal" tabindex="-1" id="ModalCreacion5">
+      <div class="modal-dialog">
+        <div class="modal-content fondo-modal">
+          <div class="modal-header">
+            <h5 class="modal-title">AGREGAR NUEVA HABILIDAD A TU PORTFOLIO</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="nombrehab">NOMBRE</label>
+                <input type="text" id="nombrehab" [(ngModel)]="nuevoNombre" />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="porcenthab">PORCENTAJE</label>
+                <input
+                  type="text"
+                  id="porcenthab"
+                  [(ngModel)]="nuevoPorcentaje"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="agregar()"
+            >
+              AGREGAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-------------Modal para editar una habilidad-------------------------------------->
+    <div class="modal" tabindex="-1" id="ModalEdicion5">
+      <div class="modal-dialog">
+        <div class="modal-content fondo-modal">
+          <div class="modal-header">
+            <h5 class="modal-title">MODIFICA UNA HABILIDAD DE TU PORTFOLIO</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Nombre</th>
+                  <th scope="col">Porcentaje</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of habilidad">
+                  <td>{{ item.nombreHabilidad }}</td>
+                  <td>{{ item.porcentajeHabilidad }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="nombrehab2">NOMBRE</label>
+                <input type="text" id="nombrehab2" [(ngModel)]="nuevoNombre" />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="porcenthab2">PORCENTAJE</label>
+                <input
+                  type="text"
+                  id="porcenthab2"
+                  [(ngModel)]="nuevoPorcentaje"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="editar()"
+            >
+              ACTUALIZAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--------------Modal para eliminar una habilidad--------------------------------------->
+    <div class="modal" tabindex="-1" id="ModalBorrado5">
+      <div class="modal-dialog">
+        <div class="modal-content fondo-modal">
+          <div class="modal-header">
+            <h5 class="modal-title">ELIMINAR UNA HABILIDAD DE TU PORTFOLIO</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="nombrehab3">NOMBRE</label>
+                <input type="text" id="nombrehab3" [(ngModel)]="nuevoNombre" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="eliminar()"
+            >
+              ELIMINAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

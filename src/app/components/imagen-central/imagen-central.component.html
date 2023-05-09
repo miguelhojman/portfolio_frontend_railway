@@ -1,0 +1,136 @@
+<section class="imagen-central container-fluid">
+  <article class="titulo-imagen-central">
+    <h1 class="py-2">{{ persona.nombreCompleto }}</h1>
+    <h1 class="py-2">{{ persona.puesto }}</h1>
+  </article>
+  <!------------------------Botones edicion--------------------------------------->
+  <div class="crud my-2">
+    <div>
+      <button
+        class="bg-warning botones-cambios"
+        data-bs-toggle="modal"
+        data-bs-target="#ModalCreacion2"
+        *ngIf="isLogged"
+      >
+        <i class="fas fa-plus-square"></i>AGREGAR
+      </button>
+    </div>
+    <div>
+      <button
+        class="bg-warning botones-cambios mx-2"
+        data-bs-toggle="modal"
+        data-bs-target="#ModalEdicion2"
+        *ngIf="isLogged"
+      >
+        <i class="fas fa-edit"></i>EDITAR
+      </button>
+    </div>
+    <div>
+      <button
+        class="bg-warning botones-cambios"
+        data-bs-toggle="modal"
+        data-bs-target="#ModalBorrado2"
+        *ngIf="isLogged"
+      >
+        <i class="fas fa-trash-alt"></i>ELIMINAR
+      </button>
+    </div>
+  </div>
+  <!------------------------------------- Modal Editar------------------------->
+  <div class="modal fade" id="ModalEdicion2" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content fondo-modal">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Editar</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <div class="my-3 mx-3">
+            <label class="mx-3" for="nombre">NOMBRE COMPLETO</label>
+            <input type="text" id="nombre" [(ngModel)]="nuevoNombreCompleto" />
+          </div>
+          <div class="my-3 mx-3">
+            <label class="mx-3" for="puesto">PUESTO</label>
+            <input type="text" id="puesto" [(ngModel)]="nuevoPuesto" />
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            CERRAR
+          </button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            (click)="actualizar()"
+            data-bs-dismiss="modal"
+          >
+            ACTUALIZAR
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-----------------------------Modal Agregar--------------------------------->
+  <div class="modal fade" id="ModalCreacion2" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content fondo-modal">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+        <div class="modal-body">
+          En ésta sección no se permite agregar nuevo contenido.
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-----------------------------Modal Eliminar-------------------------------->
+  <div class="modal fade" id="ModalBorrado2" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content fondo-modal">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar</h1>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+          ></button>
+        </div>
+        <div class="modal-body">
+          En ésta sección no se permite eliminar contenido.
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-------------------------------------------------------------------------------------->
+</section>

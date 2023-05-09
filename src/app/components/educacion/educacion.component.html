@@ -1,0 +1,221 @@
+<section class="educacion container-fluid px-2 my-3">
+  <div class="justify-content-center">
+    <h2>EDUCACIÓN</h2>
+  </div>
+  <div class="my-4 w-75 table-responsive">
+    <table class="table my-2 borde fondo">
+      <thead>
+        <tr class="titulos table-dark">
+          <th scope="col">NIVEL</th>
+          <th scope="col">INSTITUCIÓN</th>
+          <th scope="col">DESCRIPCIÓN</th>
+        </tr>
+      </thead>
+      <tbody class="body table-group-divider">
+        <tr class="borde" *ngFor="let item of educacion">
+          <td>{{ item.nivel }}</td>
+          <td>{{ item.institucion }}</td>
+          <td>{{ item.descripcion }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!----------------Botones edicion---------------------------------------------->
+    <div class="crud my-2">
+      <div>
+        <button
+          class="bg-warning botones-cambios"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalCreacion8"
+          *ngIf="isLogged"
+        >
+          <i class="fas fa-plus-square"></i>AGREGAR
+        </button>
+      </div>
+      <div>
+        <button
+          class="bg-warning botones-cambios mx-2"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalEdicion8"
+          *ngIf="isLogged"
+        >
+          <i class="fas fa-edit"></i>EDITAR
+        </button>
+      </div>
+      <div>
+        <button
+          class="bg-warning botones-cambios"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalBorrado8"
+          *ngIf="isLogged"
+        >
+          <i class="fas fa-trash-alt"></i>ELIMINAR
+        </button>
+      </div>
+    </div>
+    <!--------------Modal para agregar una educación--------------------------------->
+    <div class="modal" tabindex="-1" id="ModalCreacion8">
+      <div class="modal-dialog">
+        <div class="modal-content fondo-modal">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              AGREGAR OTRA CAPACITACIÓN A TU PORTFOLIO
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="nivel">NIVEL</label>
+                <input type="text" id="nivel" [(ngModel)]="nuevoNivel" />
+              </div>
+
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="institucion">INSTITUCIÓN</label>
+                <input
+                  type="text"
+                  id="institucion"
+                  [(ngModel)]="nuevaInstitucion"
+                />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="descripcion5">DESCRIPCIÓN</label>
+                <input
+                  type="text"
+                  id="descripcion5"
+                  [(ngModel)]="nuevaDescripcion"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="agregar()"
+            >
+              AGREGAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--------------Modal para eliminar una educacion----------------------------------->
+    <div class="modal" tabindex="-1" id="ModalBorrado8">
+      <div class="modal-dialog">
+        <div class="modal-content fondo-modal">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              ELIMINAR UNA CAPACITACIÓN DE TU PORTFOLIO
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="institucion2">INSTITUCION</label>
+                <input
+                  type="text"
+                  id="institucion2"
+                  [(ngModel)]="nuevaInstitucion"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="eliminar()"
+            >
+              ELIMINAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-------------Modal para editar una capacitación---------------------------------->
+    <div class="modal" tabindex="-1" id="ModalEdicion8">
+      <div class="modal-dialog">
+        <div class="modal-content fondo-modal">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              MODIFICA UNA CAPACITACIÓN DE TU PORTFOLIO
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <h5>ELIGE LA CAPACITACIÓN A MODIFICAR</h5>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="institucion6">INSTITUCIÓN</label>
+                <input
+                  type="text"
+                  id="institucion6"
+                  [(ngModel)]="nuevaInstitucion"
+                />
+              </div>
+              <h5>PUEDES MODIFICAR AQUÍ LOS DATOS:</h5>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="nivel6">NIVEL</label>
+                <input type="text" id="nivel6" [(ngModel)]="nuevoNivel" />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="descripcion6">DESCRIPCIÓN</label>
+                <input
+                  type="text"
+                  id="descripcion6"
+                  [(ngModel)]="nuevaDescripcion"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="editar()"
+            >
+              ACTUALIZAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+.proyectos {
+  border-bottom: 3px solid black;
+  background-color: var(--color-fondo) !important;
+}
+.proyectos h2 {
+  font-size: 2.6rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-bottom: 0 !important;
+  text-decoration: underline;
+  text-align: center;
+}
+.fila-proyectos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fila-proyectos .card {
+  height: 14rem !important;
+}
+.card-text a {
+  color: black;
+}
+.fondo-modal {
+  background-color: var(--fondo-modal);
+}

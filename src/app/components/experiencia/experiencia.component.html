@@ -1,0 +1,226 @@
+<section class="experiencia">
+  <div class="justify-content-center">
+    <h2>EXPERIENCIA LABORAL</h2>
+  </div>
+  <div class="w-75 my-4 table-responsive">
+    <table class="table my-2 borde fondo">
+      <thead>
+        <tr class="titulos table-dark">
+          <th scope="col">EMPRESA</th>
+          <th scope="col">PERÍODO</th>
+          <th scope="col">DESCRIPCIÓN</th>
+          <th scope="col">TAREAS</th>
+        </tr>
+      </thead>
+      <tbody class="body table-group-divider">
+        <tr class="borde" *ngFor="let item of experiencia">
+          <td>{{ item.empresa }}</td>
+          <td>{{ item.periodo }}</td>
+          <td>{{ item.rubro }}</td>
+          <td>{{ item.tarea }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <!----------------Botones edicion--------------------------------------------->
+    <div class="crud my-2">
+      <div>
+        <button
+          class="bg-warning botones-cambios"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalCreacion6"
+          *ngIf="isLogged"
+        >
+          <i class="fas fa-plus-square"></i>AGREGAR
+        </button>
+      </div>
+      <div>
+        <button
+          class="bg-warning botones-cambios mx-2"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalEdicion6"
+          *ngIf="isLogged"
+        >
+          <i class="fas fa-edit"></i>EDITAR
+        </button>
+      </div>
+      <div>
+        <button
+          class="bg-warning botones-cambios"
+          data-bs-toggle="modal"
+          data-bs-target="#ModalBorrado6"
+          *ngIf="isLogged"
+        >
+          <i class="fas fa-trash-alt"></i>ELIMINAR
+        </button>
+      </div>
+    </div>
+    <!-------------Modal para editar una experiencia laboral------------------------------->
+    <div class="modal" tabindex="-1" id="ModalEdicion6">
+      <div class="modal-dialog">
+        <div class="modal-content fondo-modal">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              MODIFICAR UNA EXPERIENCIA LABORAL DE TU PORTFOLIO
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Empresa</th>
+                  <th scope="col">Rubro</th>
+                  <th scope="col">Período</th>
+                  <th scope="col">Tareas</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of experiencia">
+                  <td>{{ item.empresa }}</td>
+                  <td>{{ item.rubro }}</td>
+                  <td>{{ item.periodo }}</td>
+                  <td>{{ item.tarea }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="nombreEmp">EMPRESA</label>
+                <input type="text" id="nombreEmp" [(ngModel)]="nuevaEmpresa" />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="nombreRubro">RUBRO</label>
+                <input type="text" id="nombreRubro" [(ngModel)]="nuevoRubro" />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="nombrePer">PERíODO</label>
+                <input type="text" id="nombrePer" [(ngModel)]="nuevoPeriodo" />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="tarea">TAREA</label>
+                <input type="text" id="tarea" [(ngModel)]="nuevaTarea" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="editar()"
+            >
+              ACTUALIZAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--------------Modal para agregar una experiencia laboral------------------------------->
+    <div class="modal" tabindex="-1" id="ModalCreacion6">
+      <div class="modal-dialog">
+        <div class="modal-content fondo-modal">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              AGREGAR NUEVA EXPERIENCIA LABORAL A TU PORTFOLIO
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="nombreEmp2">EMPRESA</label>
+                <input type="text" id="nombreEmp2" [(ngModel)]="nuevaEmpresa" />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="nombreRubro2">RUBRO</label>
+                <input type="text" id="nombreRubro2" [(ngModel)]="nuevoRubro" />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="nombrePer2">PERíODO</label>
+                <input type="text" id="nombrePer2" [(ngModel)]="nuevoPeriodo" />
+              </div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="tarea2">TAREA</label>
+                <input type="text" id="tarea2" [(ngModel)]="nuevaTarea" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="agregar()"
+            >
+              AGREGAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--------------Modal para eliminar una experiencia laboral------------------------------>
+    <div class="modal" tabindex="-1" id="ModalBorrado6">
+      <div class="modal-dialog">
+        <div class="modal-content fondo-modal">
+          <div class="modal-header">
+            <h5 class="modal-title">
+              ELIMINAR UNA EXPERIENCIA LABORAL DE TU PORTFOLIO
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div>
+              <div class="my-3 mx-3">
+                <label class="mx-3" for="nombreEmp3">EMPRESA</label>
+                <input type="text" id="nombreEmp3" [(ngModel)]="nuevaEmpresa" />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              CERRAR
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="eliminar()"
+            >
+              ELIMINAR
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

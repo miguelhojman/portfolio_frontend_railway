@@ -1,0 +1,25 @@
+.texto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  font-family: "Anton", sans-serif;
+  font-size: 2.9 rem;
+  word-spacing: 1rem;
+}
+.ventana {
+  background-color: var(--fondo-modal);
+  border-radius: 0 !important;
+  border: 1px solid black;
+}
+.mensaje {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (width<768px) {
+  .mensaje {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
