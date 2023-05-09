@@ -12,7 +12,7 @@ export class ExperienciaService {
   //metodo para traer las experiencias desde el back y la ddbb
   public traerExperiencias(): Observable<Experiencia> {
     return this.http.get<Experiencia>(
-      'https://renderbackend-g27z.onrender.com/traerexperiencia'
+      'https://segundaback-production.up.railway.app/traerexperiencia'
     );
   }
 }

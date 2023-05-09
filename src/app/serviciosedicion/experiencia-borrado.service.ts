@@ -12,7 +12,7 @@ export class ExperienciaBorradoService {
   constructor(private http: HttpClient) {}
 
   public eliminar(id: number): Observable<Experiencia> {
-    this.url = `https://renderbackend-g27z.onrender.com/borrarexperiencia/${id}`;
+    this.url = `https://segundaback-production.up.railway.app/borrarexperiencia/${id}`;
     return this.http.delete<Experiencia>(this.url);
   }
 }

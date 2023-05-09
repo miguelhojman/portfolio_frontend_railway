@@ -11,7 +11,7 @@ export class HabilidadeditService {
 
   public editar(h: Habilidad): Observable<Habilidad> {
     return this.http.put<Habilidad>(
-      'https://renderbackend-g27z.onrender.com/modificarhabilidad',
+      'https://segundaback-production.up.railway.app/modificarhabilidad',
       h
     );
   }

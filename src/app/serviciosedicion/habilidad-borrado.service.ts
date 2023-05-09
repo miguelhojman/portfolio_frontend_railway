@@ -12,7 +12,7 @@ export class HabilidadBorradoService {
 
   public eliminar(id: number): Observable<Habilidad> {
     this.url =
-      'https://renderbackend-g27z.onrender.com/eliminarhabilidad/' + id;
+      'https://segundaback-production.up.railway.app/eliminarhabilidad/' + id;
     return this.http.delete<Habilidad>(this.url);
   }
 }

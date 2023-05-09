@@ -11,7 +11,7 @@ export class ExperienciaeditService {
 
   public editar(e: Experiencia): Observable<Experiencia> {
     return this.http.put<Experiencia>(
-      'https://renderbackend-g27z.onrender.com/modificarexperiencia',
+      'https://segundaback-production.up.railway.app/modificarexperiencia',
       e
     );
   }

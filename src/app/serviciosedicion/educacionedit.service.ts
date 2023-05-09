@@ -11,7 +11,7 @@ export class EducacioneditService {
 
   public editar(e: Educacion): Observable<Educacion> {
     return this.http.put<Educacion>(
-      'https://renderbackend-g27z.onrender.com/modificareducacion',
+      'https://segundaback-production.up.railway.app/modificareducacion',
       e
     );
   }

@@ -11,7 +11,7 @@ export class FootereditService {
 
   public editar(p: Persona): Observable<Persona> {
     return this.http.put<Persona>(
-      'https://renderbackend-g27z.onrender.com/modificar',
+      'https://segundaback-production.up.railway.app/modificar',
       p
     );
   }

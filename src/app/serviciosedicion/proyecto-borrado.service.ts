@@ -12,7 +12,8 @@ export class ProyectoBorradoService {
   constructor(private http: HttpClient) {}
 
   public eliminar(id: number): Observable<Proyecto> {
-    this.url = 'https://renderbackend-g27z.onrender.com/borrarproyecto/' + id;
+    this.url =
+      'https://segundaback-production.up.railway.app/borrarproyecto/' + id;
     return this.http.delete<Proyecto>(this.url);
   }
 }

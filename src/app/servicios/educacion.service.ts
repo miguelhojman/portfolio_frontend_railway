@@ -12,7 +12,7 @@ export class EducacionService {
   //metodo para traer las educaciones desde el back y la ddbb
   public traerEducacion(): Observable<Educacion> {
     return this.http.get<Educacion>(
-      'https://renderbackend-g27z.onrender.com/traereducacion'
+      'https://segundaback-production.up.railway.app/traereducacion'
     );
   }
 }

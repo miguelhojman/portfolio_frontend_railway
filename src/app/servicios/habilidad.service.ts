@@ -12,7 +12,7 @@ export class HabilidadService {
   //metodo para traer las habilidades desde el back y la ddbb
   public traerHabilidades(): Observable<Habilidad> {
     return this.http.get<Habilidad>(
-      'https://renderbackend-g27z.onrender.com/traerhabilidades'
+      'https://segundaback-production.up.railway.app/traerhabilidades'
     );
   }
 }

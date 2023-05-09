@@ -13,7 +13,7 @@ export class EducacionBorradoService {
 
   public eliminar(id: number): Observable<Educacion> {
     this.url =
-      'https://renderbackend-g27z.onrender.com/eliminareducacion/' + id;
+      'https://segundaback-production.up.railway.app/eliminareducacion/' + id;
     return this.http.delete<Educacion>(this.url);
   }
 }

@@ -13,7 +13,7 @@ export class PersonaService {
   public traerPersona(): Observable<Persona> {
     //return this.http.get<Persona>('http://localhost:8080/traer/1');
     return this.http.get<Persona>(
-      'https://renderbackend-g27z.onrender.com/traer/1'
+      'https://segundaback-production.up.railway.app/traer/1'
     );
   }
 }

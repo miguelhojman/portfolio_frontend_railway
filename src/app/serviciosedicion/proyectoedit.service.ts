@@ -11,7 +11,7 @@ export class ProyectoeditService {
 
   public editar(p: Proyecto): Observable<Proyecto> {
     return this.http.put<Proyecto>(
-      'https://renderbackend-g27z.onrender.com/modificarproyecto',
+      'https://segundaback-production.up.railway.app/modificarproyecto',
       p
     );
   }

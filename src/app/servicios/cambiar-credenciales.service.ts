@@ -11,7 +11,7 @@ export class CambiarCredencialesService {
 
   enviarCredenciales(user: UserLogin): Observable<boolean> {
     return this.http.post<boolean>(
-      'https://renderbackend-g27z.onrender.com/cambiarcredenciales',
+      'https://segundaback-production.up.railway.app/cambiarcredenciales',
       user
     );
   }

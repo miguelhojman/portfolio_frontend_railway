@@ -11,7 +11,7 @@ export class ProyectoService {
 
   public traerProyectos(): Observable<Proyecto> {
     return this.http.get<Proyecto>(
-      'https://renderbackend-g27z.onrender.com/traerproyectos'
+      'https://segundaback-production.up.railway.app/traerproyectos'
     );
   }
 }
